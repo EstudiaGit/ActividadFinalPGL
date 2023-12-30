@@ -1,0 +1,7 @@
+{
+  "name": "ionicActividad",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
