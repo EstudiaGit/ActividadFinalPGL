@@ -9,7 +9,8 @@ Esta aplicación web permite a los usuarios crear y mantener listas personalizad
 ## Funcionalidades
 
 - **Landing Page:** Página principal que muestra el título de la aplicación y una breve descripción de sus funcionalidades.
-<img src="https://github.com/EstudiaGit/ActividadFinalPGL/assets/93317704/86047630-b747-45b7-bab5-c80dfc1a00a9" alt="Texto alternativo" width="200">  
+<img src="https://github.com/EstudiaGit/ActividadFinalPGL/assets/93317704/1ddd8138-3c2a-4b1f-9e36-aab4acfba539" alt="Texto alternativo" width="200">  
+
 
 - **Página de Inicio:** Muestra la lista de canciones almacenadas en la base
  de datos (Firestore) hasta el momento. Incluye un menú desplegable con opciones, como agregar una nueva canción a la lista actual.
