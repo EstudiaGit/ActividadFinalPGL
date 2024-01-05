@@ -35,7 +35,7 @@ Esta aplicación web permite a los usuarios crear y mantener listas personalizad
 
 1. **Clonar el Repositorio:**
    ```bash
-   git clone URL_del_repositorio](https://github.com/EstudiaGit/ActividadFinalPGL.git
+   git clone https://github.com/EstudiaGit/ActividadFinalPGL.git
 
 2. **Instalar Dependencias:**
    ```bash
