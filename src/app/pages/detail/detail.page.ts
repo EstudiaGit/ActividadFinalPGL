@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Song } from '../../models/song.interface';
 import { FirestoreService } from '../../services/data/firestore.service';
+import * as Math from 'mathjs'; // Importa el módulo Math
 
 @Component({
   selector: 'app-detail',
@@ -10,22 +11,27 @@ import { FirestoreService } from '../../services/data/firestore.service';
 })
 export class DetailPage implements OnInit {
   song: Song | undefined;
+  public Math = Math; // Declara el módulo Math como una propiedad pública
 
   constructor(
     private firestoreService: FirestoreService,
     private activatedRoute: ActivatedRoute
   ) {}
-  ngOnInit(): void {}
 
-  /*ngOnInit() {
-    // Obtener el id de la canción de la ruta
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    // Si hay un id, suscribirse al observable de la canción
-    if (id) {
-      this.firestoreService.getSongDetail(id).subscribe((song) => {
-        // Asignar la canción a la variable local
+  ngOnInit() {
+    const songId = this.activatedRoute.snapshot.paramMap.get('id');
+    if (songId) {
+      this.firestoreService.getSongDetail(songId).subscribe((song) => {
         this.song = song;
       });
     }
-  }*/
+  }
+
+  // Aquí puedes usar la función Math.random dentro de cualquier método
+  generateRandomNumber() {
+    let min = 4;
+    let max = 5;
+    let random = Math.random() * (max - min) + min;
+    console.log('Número aleatorio generado: ' + random);
+  }
 }

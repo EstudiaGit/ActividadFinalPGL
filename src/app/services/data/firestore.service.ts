@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Song } from '../../models/song.interface';
-import { DocumentReference } from 'firebase/firestore';
+import {
+  DocumentData,
+  DocumentReference,
+  FirestoreDataConverter,
+  QueryDocumentSnapshot,
+  SnapshotOptions,
+} from 'firebase/firestore';
 import {
   collectionData,
   collection,
@@ -10,8 +16,21 @@ import {
   docData,
   getDoc,
 } from '@angular/fire/firestore';
-import { Observable, filter, from, map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
 //import { AngularFirestore } from '@angular/fire/compat/firestore';
+const songConverter: FirestoreDataConverter<Song> = {
+  fromFirestore(
+    snapshot: QueryDocumentSnapshot,
+    options: SnapshotOptions
+  ): Song {
+    const data = snapshot.data(options);
+    return { ...data } as Song;
+  },
+  toFirestore(modelObject: Song): DocumentData {
+    return { ...modelObject };
+  },
+};
 
 @Injectable({
   providedIn: 'root',
@@ -50,11 +69,13 @@ export class FirestoreService {
     });
   }
 
-  // We create the function:
-  /*getSongDetail(songId: string): Observable<Song> {
-  const songRef = doc(this.firestore, `songList/${songId}`);
-  return docData<Song>(songRef, {
-    idField: 'id'
-  });
-}*/
+  getSongDetail(songId: string): Observable<Song> {
+    const songDocument = doc(
+      this.firestore,
+      `songList/${songId}`
+    ).withConverter(songConverter);
+    return docData<Song>(songDocument, { idField: 'id' }).pipe(
+      filter((song): song is Song => song !== undefined)
+    );
+  }
 }

@@ -39,7 +39,7 @@ export class CreatePage implements OnInit {
       .then(
         () => {
           loading.dismiss().then(() => {
-            this.router.navigateByUrl('');
+            this.router.navigateByUrl('home');
           });
         },
         (error) => {
