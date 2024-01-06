@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ song?.songName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Album</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img
+        src="https://picsum.photos/536/354?random={{ Math.random() }}"
+        alt="Imagen de la canción"
+        class="ion-img img-responsive"
+      ></ion-img>
+      <ion-text>
+        <p>Fue parte del album <strong>{{ song?.albumName }}</strong>.</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cantante</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        La canción <strong>{{ song?.songName }}</strong> fue creada por
+        <strong>{{ song?.artistName }}</strong>.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Descripción</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ song?.songDescription }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!--<ion-button expand="block" (click)="deleteSong()"> DELETE SONG </ion-button>-->
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="header-title">Mi Playlist Personal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="landing-content ion-padding">
+  <ion-card class="landing-card">
+    <ion-grid>
+      <ion-row>
+        <div class="landing-container">
+          <img
+            src="../../assets/image/back_0.png"
+            class="landing-image"
+            alt="imagen"
+          />
+        </div>
+
+        <div class="landing-text">
+          <h1>Crea tu Música</h1>
+          <p>¡Haz playlists personalizadas para cada momento!</p>
+        </div>
+
+        <ion-button expand="block" size="large" routerLink="/home">
+          ¡Crear Playlist Ahora!
+        </ion-button>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,84 @@
+.landing-card {
+  --background: #efd49e58; /* Color de fondo de la tarjeta */
+  --ion-color-primary: #005c6d; /* Color de los elementos de la tarjeta */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Altura de la tarjeta */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.landing-image {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #cfe4e8;
+}
+.custom-toolbar {
+  --background: #005c6d;
+}
+
+.landing-content {
+  --background: linear-gradient(135deg, #49cde8, #005c6d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-container {
+  width: 80%; /* El ancho puede variar según tu diseño */
+  margin: auto;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.landing-text {
+  width: 80%; /* El ancho puede variar según tu diseño */
+  margin: auto;
+  text-align: center;
+  h1 {
+    font-size: 28px;
+    //margin-bottom: 12px;
+    color: #005c6d;
+  }
+  p {
+    color: #333333;
+    font-size: 16px;
+    //margin-bottom: 24px;
+  }
+}
+
+ion-button {
+  width: 90%; /* El ancho puede variar según tu diseño */
+  margin: auto;
+  text-align: center;
+  --background: #005c6d; /* Color del botón */
+  --color: #cfe4e8; /* Color del texto del botón */
+}
+
+/* Esto se aplica cuando la pantalla está en horizontal */
+@media screen and (orientation: landscape) {
+  .landing-image {
+    width: 15%;
+    margin: 0 auto;
+  }
+  ion-button {
+    width: 70%;
+  }
+  .landing-container {
+    padding: 0;
+  }
+  h1 {
+    display: none;
+  }
+  p {
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+}

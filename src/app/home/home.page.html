@@ -1,0 +1,46 @@
+<ion-split-pane contentId="main-content">
+  <!-- Menú lateral -->
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>
+      <ion-toolbar color="medium">
+        <ion-title>Nueva canción</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <!-- Contenido del menú -->
+      <ion-list>
+        <ion-item routerLink="/create">
+          <ion-button slot="start"
+            ><ion-icon name="add" size="large"></ion-icon
+          ></ion-button>
+          <ion-label>Añadir</ion-label>
+        </ion-item>
+
+        <!-- Otras opciones del menú -->
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Contenido principal -->
+  <ion-router-outlet id="main-content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Lista Personal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content class="padding">
+      <ion-card *ngFor="let song of songList | async">
+        <ion-item routerLink="/detail/{{song.id}}">
+          <ion-label>
+            <h2>{{ song.songName }}</h2>
+            <p>Artist Name: {{ song.artistName }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card>
+    </ion-content>
+  </ion-router-outlet>
+</ion-split-pane>
